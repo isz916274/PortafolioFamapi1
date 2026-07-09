@@ -1,0 +1,755 @@
+/* Reset básico para eliminar márgenes predeterminados */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    height: 100%;
+}
+
+/* Contenedor principal */
+.hero-section {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    /* Reemplaza con la ruta correcta de tu imagen */
+    background-image: url('../img/fondo.png'); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Evita scrollbars no deseados */
+}
+
+/* Filtro azul oscuro sobre la imagen */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(14, 38, 77, 0.85); /* Azul con 85% de opacidad */
+    z-index: 1;
+}
+
+/* Contenedor del texto para que quede sobre el fondo */
+.contenido {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: #ffffff;
+    max-width: 800px;
+    padding: 20px;
+}
+
+/* Estilos del subtítulo y las líneas amarillas */
+.subtitulo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    color: #ffb700;
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 2px;
+    margin-bottom: 25px;
+}
+
+.linea {
+    height: 2px;
+    width: 30px;
+    background-color: #ffb700;
+    display: inline-block;
+}
+
+/* Estilos del Título y Párrafo */
+h1 {
+    font-size: 4rem;
+    font-weight: 500;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
+
+p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #d1d5db;
+    margin-bottom: 40px;
+}
+
+/* Estilos del Botón */
+.btn-cotizacion {
+    background-color: #ffb700;
+    color: #000000;
+    border: none;
+    padding: 16px 32px;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-cotizacion:hover {
+    background-color: #e5a400;
+}
+
+/* Flecha hacia abajo */
+.flecha-abajo {
+    margin-top: 40px;
+    font-size: 24px;
+    color: #ffffff;
+    opacity: 0.6;
+}
+
+/* =========================================
+   ESTILOS DE LA MARQUESINA INFERIOR
+   ========================================= */
+.marquesina-contenedor {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(8, 25, 55, 0.95); /* Fondo de la barra inferior */
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 15px 0;
+    overflow: hidden;
+    z-index: 2;
+    white-space: nowrap;
+}
+
+.marquesina-texto {
+    display: inline-block;
+    color: #7b8ea8; /* Texto gris/azulado */
+    font-family: monospace; /* Fuente de estilo técnico */
+    font-size: 13px;
+    letter-spacing: 1px;
+    /* Animación infinita */
+    animation: moverMarquesina 25s linear infinite;
+}
+
+/* Keyframes para hacer el efecto de desplazamiento (marquee) */
+@keyframes moverMarquesina {
+    0% {
+        transform: translateX(100vw); /* Inicia fuera de la pantalla a la derecha */
+    }
+    100% {
+        transform: translateX(-100%); /* Termina fuera de la pantalla a la izquierda */
+    }
+}
+
+/* =========================================
+   SECCIÓN DE DATOS (ESTADÍSTICAS)
+   ========================================= */
+.datos {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 80px 20px;
+    background-color: #ffffff;
+    gap: 40px;
+}
+
+/* Animación de entrada por cada bloque */
+.dato-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Inician invisibles y un poco abajo */
+    opacity: 0;
+    transform: translateY(30px);
+    /* La animación se activa al cargar */
+    animation: slideUpFade 0.8s ease forwards;
+    animation-delay: var(--anim-delay); /* Usa el delay puesto en el HTML */
+}
+
+/* Estilo de los números */
+.numero {
+    font-size: 3.5rem;
+    font-weight: 500;
+    color: #0e264d; /* Azul oscuro que hace juego */
+    margin: 0;
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+/* Línea amarilla debajo de los números */
+.linea-separador {
+    width: 30px;
+    height: 3px;
+    background-color: #ffb700;
+    margin: 15px 0;
+}
+
+/* Etiquetas grises */
+.etiqueta {
+    font-size: 0.85rem;
+    color: #8e95a0;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-family: monospace;
+    text-align: center;
+    margin: 0;
+}
+
+/* Keyframes para que aparezcan deslizándose hacia arriba */
+@keyframes slideUpFade {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsivo para móviles */
+@media (max-width: 768px) {
+    .datos {
+        flex-direction: column;
+        padding: 50px 20px;
+    }
+}
+
+/* =========================================
+   SECCIÓN: PROYECTOS REALIZADOS
+   ========================================= */
+.Trabajos {
+    padding: 80px 5%;
+    background-color: #f8f9fa; /* Fondo gris muy claro */
+    text-align: center;
+}
+
+/* Encabezado */
+.encabezado-seccion {
+    margin-bottom: 40px;
+}
+
+.subtitulo-portfolio {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    color: #a0a5af;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+.linea-amarilla {
+    height: 2px;
+    width: 30px;
+    background-color: #ffb700;
+}
+
+.titulo-principal {
+    font-size: 2.5rem;
+    color: #0e264d;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Filtros */
+.filtros-contenedor {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 40px;
+}
+
+.btn-filtro {
+    background: transparent;
+    border: 1px solid #d1d5db;
+    color: #6b7280;
+    padding: 10px 20px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-filtro:hover, .btn-filtro.activo {
+    background-color: #0e264d;
+    color: #ffffff;
+    border-color: #0e264d;
+    border-bottom: 4px solid #ffb700; /* Detalle amarillo del diseño */
+}
+
+/* Grid de Proyectos (3 columnas) */
+.proyectos-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-bottom: 40px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Tarjeta Individual */
+.proyecto-card {
+    background: #ffffff;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    text-align: left;
+    transition: transform 0.3s;
+    display: flex;
+    flex-direction: column;
+}
+
+.proyecto-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Imagen y detalles visuales */
+.imagen-contenedor {
+    position: relative;
+    height: 220px;
+    overflow: hidden;
+}
+
+.imagen-contenedor img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.categoria-tag {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background-color: #0e264d;
+    color: #fff;
+    font-size: 10px;
+    font-weight: bold;
+    padding: 5px 10px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+/* Esquinas decorativas amarillas */
+.esquina-decorativa {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #ffb700;
+}
+.esquina-tl { top: 15px; left: 15px; border-right: none; border-bottom: none; }
+.esquina-bl { bottom: 15px; left: 15px; border-right: none; border-top: none; }
+.esquina-br { bottom: 15px; right: 15px; border-left: none; border-top: none; }
+
+/* Contenido de la Tarjeta */
+.proyecto-info {
+    padding: 25px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.proyecto-info h3 {
+    font-size: 1.1rem;
+    color: #1f2937;
+    margin-bottom: 5px;
+}
+
+.cliente {
+    color: #9ca3af;
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+}
+
+.detalles-meta {
+    display: flex;
+    gap: 15px;
+    font-size: 0.8rem;
+    color: #9ca3af;
+    margin-bottom: 15px;
+}
+
+.descripcion {
+    font-size: 0.9rem;
+    color: #6b7280;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    flex-grow: 1; /* Empuja el botón al fondo */
+}
+
+/* Link Ver Proyecto */
+.ver-proyecto {
+    display: inline-flex;
+    align-items: center;
+    color: #0e264d;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.ver-proyecto::before {
+    content: '';
+    display: inline-block;
+    width: 20px;
+    height: 2px;
+    background-color: #ffb700;
+    margin-right: 10px;
+}
+
+/* Paginación */
+.paginacion-contenedor {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.btn-pagina {
+    padding: 8px 15px;
+    border: 1px solid #d1d5db;
+    background: #fff;
+    color: #0e264d;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.2s;
+}
+
+.btn-pagina.activo, .btn-pagina:hover {
+    background: #0e264d;
+    color: #fff;
+    border-color: #0e264d;
+}
+
+/* Responsivo */
+@media (max-width: 992px) {
+    .proyectos-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+    .proyectos-grid { grid-template-columns: 1fr; }
+    .titulo-principal { font-size: 2rem; }
+}
+
+/* =========================================
+   SECCIÓN: NOTICIAS Y REDES SOCIALES
+   ========================================= */
+.redesEnVivo {
+    padding: 80px 5%;
+    background-color: #f4f6f9; /* Fondo gris muy tenue */
+}
+
+/* Layout Principal usando Grid */
+.noticias-redes-contenedor {
+    display: grid;
+    /* Divide el ancho: 2 partes para noticias, 1 parte para el feed */
+    grid-template-columns: 2fr 1fr; 
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* --- COLUMNA IZQUIERDA: NOTICIAS --- */
+.columna-noticias {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.tarjeta-noticia {
+    background: #ffffff;
+    padding: 30px;
+    border: 1px solid #e5e7eb;
+    position: relative; /* Para posicionar la flecha */
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.tarjeta-noticia:hover {
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transform: translateY(-2px);
+}
+
+.noticia-meta {
+    display: flex;
+    gap: 15px;
+    font-size: 0.75rem;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+}
+
+.noticia-categoria {
+    color: #ffb700;
+    font-weight: 700;
+}
+
+.noticia-fecha {
+    color: #9ca3af;
+}
+
+.icono-flecha {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    color: #9ca3af;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.noticia-titulo {
+    font-size: 1.15rem;
+    color: #0e264d;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.noticia-extracto {
+    font-size: 0.95rem;
+    color: #6b7280;
+    line-height: 1.6;
+    margin: 0;
+}
+
+
+/* --- COLUMNA DERECHA: FEED SOCIAL --- */
+.columna-redes {
+    background-color: #12284c; /* Azul oscuro corporativo */
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+.redes-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #7b8ea8;
+    font-size: 0.8rem;
+    letter-spacing: 1.5px;
+    margin-bottom: 30px;
+}
+
+.punto-amarillo {
+    width: 8px;
+    height: 8px;
+    background-color: #ffb700;
+    border-radius: 50%;
+}
+
+.lista-posts {
+    display: flex;
+    flex-direction: column;
+}
+
+.post-item {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 15px 0;
+}
+
+.post-item:last-child {
+    border-bottom: none; /* Quita la línea del último post */
+}
+
+.post-meta {
+    display: flex;
+    justify-content: space-between;
+    color: #7b8ea8;
+    font-size: 0.75rem;
+    margin-bottom: 8px;
+}
+
+.post-texto {
+    font-size: 0.85rem;
+    color: #d1d5db;
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* Iconos Sociales en el pie del bloque */
+.redes-sociales-iconos {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: auto; /* Empuja los iconos al fondo */
+    padding-top: 20px;
+}
+
+.icono-red {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 35px;
+    height: 35px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #7b8ea8;
+    text-decoration: none;
+    font-size: 0.85rem;
+    transition: all 0.3s ease;
+}
+
+.icono-red:hover {
+    border-color: #ffb700;
+    color: #ffb700;
+}
+
+/* Responsive para dispositivos móviles y tablets */
+@media (max-width: 992px) {
+    .noticias-redes-contenedor {
+        /* En pantallas más pequeñas, apila las columnas verticalmente */
+        grid-template-columns: 1fr; 
+    }
+    
+    .icono-flecha {
+        display: none; /* Oculta la flecha en móviles para ahorrar espacio */
+    }
+}
+
+/* =========================================
+   PIE DE PÁGINA (FOOTER)
+   ========================================= */
+.pie-pagina {
+    background-color: #0c1f3d; /* Azul corporativo muy oscuro */
+    color: #d1d5db;
+    padding: 70px 5% 30px;
+}
+
+/* Layout del cuerpo del footer */
+.footer-contenido {
+    display: grid;
+    /* La primera columna toma un poco más de espacio que las otras dos */
+    grid-template-columns: 1.5fr 1fr 1fr;
+    gap: 50px;
+    max-width: 1200px;
+    margin: 0 auto 50px;
+}
+
+/* --- Columna 1 --- */
+.footer-logo {
+    color: #ffffff;
+    font-size: 1.4rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+}
+
+.linea-logo {
+    width: 35px;
+    height: 3px;
+    background-color: #ffb700;
+    margin-bottom: 20px;
+}
+
+.footer-texto {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #8fa0b8; /* Tono azul/gris claro */
+    max-width: 90%;
+}
+
+/* --- Columnas 2 y 3 --- */
+.footer-titulo {
+    color: #ffffff;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    margin-bottom: 25px;
+}
+
+/* Listas reseteadas */
+.footer-enlaces,
+.footer-contacto {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Estilos de los enlaces de Soluciones */
+.footer-enlaces li {
+    margin-bottom: 15px;
+}
+
+.footer-enlaces a {
+    color: #8fa0b8;
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: color 0.3s ease;
+}
+
+.footer-enlaces a:hover {
+    color: #ffb700;
+}
+
+/* Estilos de la lista de Contacto */
+.footer-contacto li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 18px;
+    color: #8fa0b8;
+    font-size: 0.95rem;
+}
+
+/* Color amarillo aplicado directamente a los iconos SVG */
+.icono-contacto {
+    color: #ffb700;
+    display: flex;
+    align-items: center;
+}
+
+/* --- Barra Inferior (Legales) --- */
+.footer-inferior {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-top: 25px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08); /* Línea divisoria muy tenue */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.8rem;
+    color: #5c6e8a;
+}
+
+.footer-inferior p {
+    font-family: monospace; /* Fuente estilo código para el año/copyright */
+    letter-spacing: 0.5px;
+}
+
+.footer-legales {
+    display: flex;
+    gap: 20px;
+}
+
+.footer-legales a {
+    color: #5c6e8a;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-legales a:hover {
+    color: #ffffff;
+}
+
+/* Responsividad para Móviles y Tablets */
+@media (max-width: 992px) {
+    .footer-contenido {
+        grid-template-columns: 1fr 1fr; /* 2 columnas en tablet */
+    }
+    .marca-columna {
+        grid-column: 1 / -1; /* Hace que la columna 1 ocupe todo el ancho arriba */
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .footer-contenido {
+        grid-template-columns: 1fr; /* 1 sola columna en celular */
+        gap: 40px;
+    }
+    
+    .footer-inferior {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+}
