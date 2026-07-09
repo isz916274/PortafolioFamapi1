@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
             ubicacion: "Monterrey, NL",
             año: "2025",
             categoria: "Racks Selectivos",
-            imagen: "img/proyecto1.jpg", // Cambia a tus rutas reales
+            imagen: "../img/CentroNacional.jpg", // Cambia a tus rutas reales
             descripcion: "Instalación de un sistema integral de racks selectivos de doble profundidad con pasillos elevados para maximizar el espacio."
         },
         {
@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
             ubicacion: "Guadalajara, JAL",
             año: "2024",
             categoria: "Cantilever",
-            imagen: "img/proyecto2.jpg",
+            imagen: "../img/PlantaAcero.png",
             descripcion: "Sistema cantilever de alta capacidad para almacenamiento de perfiles, tubería y lámina de diferentes dimensiones."
         },
         {
@@ -25,15 +25,15 @@ document.addEventListener("DOMContentLoaded", () => {
             ubicacion: "CDMX",
             año: "2024",
             categoria: "Mezzanine",
-            imagen: "img/proyecto3.jpg",
+            imagen: "../img/CentroOperaciones.png",
             descripcion: "Mezzanine de 3 niveles con capacidad de 500 kg/m² para operación de fulfillment de e-commerce a gran escala."
         },
         // Añadimos datos de prueba para generar más de 6 y ver la paginación
-        { titulo: "ALMACÉN FRIGORÍFICO", cliente: "Carnes Finas", ubicacion: "Sonora", año: "2023", categoria: "Automatización", imagen: "img/fondo.png", descripcion: "Sistema de almacenamiento automatizado en frío." },
-        { titulo: "BODEGA TEXTIL", cliente: "Telas de México", ubicacion: "Puebla", año: "2023", categoria: "Logística", imagen: "img/fondo.png", descripcion: "Optimización de espacio para bobinas de tela." },
-        { titulo: "PARQUE INDUSTRIAL SUR", cliente: "Inmobiliaria SUR", ubicacion: "Querétaro", año: "2022", categoria: "Industria", imagen: "img/fondo.png", descripcion: "Equipamiento total de 5 naves industriales." },
-        { titulo: "RACKS DINÁMICOS", cliente: "Bebidas SA", ubicacion: "Toluca", año: "2022", categoria: "Racks Selectivos", imagen: "img/fondo.png", descripcion: "Sistema dinámico FIFO para control de caducidad." },
-        { titulo: "SISTEMA DRIVE-IN", cliente: "Lácteos del Bajío", ubicacion: "Guanajuato", año: "2021", categoria: "Racks Selectivos", imagen: "img/fondo.png", descripcion: "Almacenamiento de alta densidad para productos homogéneos." }
+        { titulo: "ALMACÉN FRIGORÍFICO", cliente: "Carnes Finas", ubicacion: "Sonora", año: "2023", categoria: "Automatización", imagen: "../img/AlmacenFrigorifico.png", descripcion: "Sistema de almacenamiento automatizado en frío." },
+        { titulo: "BODEGA TEXTIL", cliente: "Telas de México", ubicacion: "Puebla", año: "2023", categoria: "Logística", imagen: "../img/BodegaTextil.jpg", descripcion: "Optimización de espacio para bobinas de tela." },
+        { titulo: "PARQUE INDUSTRIAL SUR", cliente: "Inmobiliaria SUR", ubicacion: "Querétaro", año: "2022", categoria: "Industria", imagen: "../img/ParqueIndustrial.jpg", descripcion: "Equipamiento total de 5 naves industriales." },
+        { titulo: "RACKS DINÁMICOS", cliente: "Bebidas SA", ubicacion: "Toluca", año: "2022", categoria: "Racks Selectivos", imagen: "../img/RacksDinamicos.jpg", descripcion: "Sistema dinámico FIFO para control de caducidad." },
+        { titulo: "SISTEMA DRIVE-IN", cliente: "Lácteos del Bajío", ubicacion: "Guanajuato", año: "2021", categoria: "Racks Selectivos", imagen: "../img/SistemaDriveIn.jpg", descripcion: "Almacenamiento de alta densidad para productos homogéneos." }
     ];
 
     // 2. Variables de estado
