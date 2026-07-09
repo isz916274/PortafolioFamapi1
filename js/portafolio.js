@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
             año: "2024",
             categoria: "Cantilever",
             imagen: "img/PlantaAcero.png",
-            descripcion: "Sistema cantilever de alta capacidad para almacenamiento de perfiles, tubería y lámina de diferentes dimensiones."
+            descripcion: "Sistema cantilever de alta capacidad para almacenamiento de perfiles, tubería y lámina de diferentes dimensiones"
         },
         {
             titulo: "CENTRO DE OPERACIONES E-COMMERCE",
